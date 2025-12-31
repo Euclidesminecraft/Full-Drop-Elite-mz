@@ -17,6 +17,7 @@ export interface Project {
   tags: string[];
   imageUrl: string;
   description: string;
+  price?: number; // Agora opcional para sistema de Orçamento
 }
 
 export interface NavItem {

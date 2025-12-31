@@ -117,6 +117,12 @@ const VirtualShowroom: React.FC = () => {
     { name: 'Pearl White', value: '#f3f4f6' },
   ];
 
+  const handleQuote = () => {
+    const colorName = colors.find(c => c.value === carColor)?.name || carColor;
+    const message = `Olá! Fiz uma configuração no 3D Showroom:\n\n- Cor: ${colorName}\n- Estilo: JDM Concept Alpha\n\nGostaria de saber se é possível replicar este visual.`;
+    window.open(`https://wa.me/258862560607?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
   return (
     <div className="h-screen w-full bg-fde-black relative overflow-hidden flex flex-col">
       {/* Interface Overlay */}
@@ -230,7 +236,7 @@ const VirtualShowroom: React.FC = () => {
              ))}
           </div>
 
-          <Button onClick={() => alert("Configuração salva! Envie para o WhatsApp.")} className="whitespace-nowrap">
+          <Button onClick={handleQuote} className="whitespace-nowrap">
             Solicitar Orçamento
           </Button>
         </div>
